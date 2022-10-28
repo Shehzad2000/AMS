@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "AirLineView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .input1 {
+        border-radius: 6px;
+        border: 1px #9C27B0 solid;
+    }
+</style>
+<body>
+    <!-- Button trigger modal -->
+    <div class="container-fluid">
+        <input type="hidden" id="AirLineID" />
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myCModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>AirLine Information</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><i class="fa fa-close"></i></span> </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-0">
+                        <div class="col-md-12 border-right">
+                            <div class="status p-3">
+                                <div class="form-group">
+                                    <label>AirPort</label>
+                                    <div class="Airports"></div>
+
+                                </div>
+                                <div class="form-group">
+                                    <label>AirLine</label>
+                                    <input type="text" id="AirLineName" placeholder="Enter AirLineName here...." class="form-control input1" />
+                                </div>
+                                <div class="form-group">
+                                    <label>BussinessSeats</label>
+
+                                    <input type="text" class="form-control input1" placeholder="Enter BusinessSeat here...." id="BusinessSeat" />
+                                </div>
+                                <div class="form-group">
+                                    <label>EconomicSeats</label>
+
+                                    <input type="text" placeholder="Enter EconomicSeats here...." class="form-control input1" id="EconomicSeat" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Status</label>
+                                    <select id="SStatus" class="form-control input1">
+                                        <option value="-1">--- Select Status ---</option>
+                                        <option value="1">Active</option>
+                                        <option value="0">InActive</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+
+                                    <button onclick="AirLineAddOrUpdate();" id="btnAdd" class="btn  btn-primary " type="submit"><i class="fa fa-send-o"><strong>Submit</strong></i></button>
+
+                                    <button type="button" class="btn  btn-primary " id="btnUpdate" style="display:none;" onclick="AirLineAddOrUpdate();"><i class="fa fa-send-o"><strong>Update</strong></i></button>
+
+                                    <button class="btn  btn-warning " onclick="ClearAirLineTextBoxes();" type="reset"><i class="fa fa-refresh "><strong>Reset</strong></i></button>
+
+
+                                    @*<button type="button" class="btn btn-danger float-right m-t-n-xs" data-dismiss="modal"><i class="fa fa-close"><strong>  Close</strong></i></button>*@
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("_AirLineDetails")
+
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+    <script src="~/Scripts/CustomJavascript/AirLine.js"></script>
+</body>

@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "ReservationView";
+    Layout = null;
+}
+
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-6">
+            <label>RouteFrom:</label>
+            <div class="FromSearchInfo"></div>
+        </div>
+        <div class="col-md-6">
+            <label>RouteTo:</label>
+            <div class="ToSearchInfo"></div>
+        </div>
+    </div>
+
+    <div class="row mb-4 ">
+        <div class="col-md-4">
+            <label>Date:</label>
+            <input type="date" id="Date" class="form-control input1" />
+        </div>
+        <div class="col-md-4">
+            <label>Cabin:</label>
+            <div class="CabinData"></div>
+        </div>
+
+        <div class="col-md-4">
+            <label>Adults:</label>
+            <input type="number" class="form-control input1" id="Adults" />
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <button class="btn btn-primary btn-block" onclick="LoadSchedule(document.getElementById('Adults').value);"><i class="fa fa-plane"><strong>Search Flight</strong></i></button>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="tScheduleData"></div>
+        </div>
+    </div>
+    <div class="ReservForm mt-5"></div>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+    <script src="~/Scripts/CustomJavascript/Reservation.js"></script>
+</div>

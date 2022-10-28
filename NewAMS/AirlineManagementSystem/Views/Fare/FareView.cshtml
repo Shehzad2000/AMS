@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "FareView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    .input1 {
+        border-radius: 6px;
+        border: 1px #9C27B0 solid;
+    }
+</style>
+
+<body>
+    <!-- Button trigger modal -->
+    <div class="container-fluid">
+        <input type="hidden" id="FareID" />
+        @Html.Partial("_FareDetails")
+
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Fair Information</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><i class="fa fa-close"></i></span> </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-0">
+                            <div class="col-md-12 border-right">
+                                <div class="status p-3">
+                                    <div class="form-group">
+                                        <label>Route</label>
+                                        <div class="RouteInfo"></div>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Cabin</label>
+                                        <div class="CabinData"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Fare</label>
+
+                                        <input type="text" class="form-control input1" id="Fare" />
+                                    </div>
+                                    <div class="form-group">
+
+                                        <button onclick="FareAddorUpdate();" id="btnAdd" class="btn  btn-primary " type="submit"><i class="fa fa-send-o"><strong>Submit</strong></i></button>
+
+                                        <button type="button" class="btn  btn-primary " id="btnUpdate" style="display:none;" onclick="FareAddorUpdate();"><i class="fa fa-send-o"><strong>Update</strong></i></button>
+
+                                        <button class="btn  btn-warning " type="reset"><i class="fa fa-refresh "><strong>Reset</strong></i></button>
+
+
+                                        @*<button type="button" class="btn btn-danger float-right m-t-n-xs" data-dismiss="modal"><i class="fa fa-close"><strong>  Close</strong></i></button>*@
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Modal -->
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src="~/Scripts/CustomJavascript/Fare.js"></script>
+</body>
+
+

@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "CountryView";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .input1 {
+        border-radius: 6px;
+        border: 1px #9C27B0 solid;
+    }
+</style>
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+<body>
+    <!-- Button trigger modal -->
+    <div class="container-fluid">
+        <input type="hidden" id="CountryID" />
+    </div>
+    <!-- Modal -->
+    <form id="CountryForm">
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Country Information</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true"><i class="fa fa-close"></i></span> </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-0">
+                            <div class="col-md-12 border-right">
+                                <div class="status p-3">
+                                    <div class="form-group">
+                                        <label>Country</label>
+                                        <input type="text" name="Co_Name" id="CountryName" autofocus class="form-control input1" placeholder="Enter CountryName here....." />
+                                    </div>
+                                    <div class="form-group">
+
+                                        <button onclick="CountryAdd();" id="btnAdd" class="btn  btn-primary " type="submit"><i class="fa fa-send-o"><strong>Submit</strong></i></button>
+
+                                        <button type="button" class="btn  btn-primary " id="btnUpdate" style="display:none;" onclick="CountryUpdate();"><i class="fa fa-send-o"><strong>Update</strong></i></button>
+
+                                        <button class="btn  btn-warning " type="reset"><i class="fa fa-refresh "><strong>Reset</strong></i></button>
+
+
+                                        @*<button type="button" class="btn btn-danger float-right m-t-n-xs" data-dismiss="modal"><i class="fa fa-close"><strong>  Close</strong></i></button>*@
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    @Html.Partial("_CountryDetails")
+    <script src="~/Scripts/CustomJavascript/Country.js"></script>
+</body>
+
